@@ -1,0 +1,31 @@
+boot.o: boot.S multiboot.h x86_desc.h types.h idt.h
+handler.o: handler.S
+interrupt_handlers.o: interrupt_handlers.S idt.h
+switch_to_user.o: switch_to_user.S syscalls.h x86_desc.h types.h
+syscall_handler.o: syscall_handler.S syscalls.h
+x86_desc.o: x86_desc.S x86_desc.h types.h
+file_operations.o: file_operations.c
+filesysobjs.o: filesysobjs.c filesysobjs.h types.h lib.h \
+  keyboard_driver.h syscalls.h i8259.h
+i8259.o: i8259.c i8259.h types.h lib.h
+idt.o: idt.c idt.h x86_desc.h types.h interrupt_handlers.h i8259.h \
+  terminal_driver.h lib.h keyboard_driver.h syscall_handler.h
+kernel.o: kernel.c multiboot.h types.h x86_desc.h lib.h i8259.h debug.h \
+  rtc.h idt.h syscalls.h filesysobjs.h keyboard_driver.h unit_tests.h \
+  paging_handler.h terminal_driver.h
+keyboard_driver.o: keyboard_driver.c lib.h types.h keyboard_driver.h \
+  terminal_driver.h i8259.h syscalls.h filesysobjs.h paging_handler.h
+lib.o: lib.c lib.h types.h keyboard_driver.h i8259.h
+paging_handler.o: paging_handler.c paging_handler.h types.h lib.h \
+  syscalls.h filesysobjs.h keyboard_driver.h i8259.h
+rtc.o: rtc.c rtc.h lib.h types.h
+scheduler.o: scheduler.c i8259.h types.h lib.h paging_handler.h \
+  scheduler.h syscalls.h filesysobjs.h keyboard_driver.h \
+  terminal_driver.h x86_desc.h
+syscalls.o: syscalls.c lib.h types.h syscalls.h filesysobjs.h \
+  keyboard_driver.h i8259.h terminal_driver.h rtc.h paging_handler.h \
+  x86_desc.h
+terminal_driver.o: terminal_driver.c lib.h types.h idt.h \
+  terminal_driver.h keyboard_driver.h syscalls.h filesysobjs.h i8259.h
+unit_tests.o: unit_tests.c unit_tests.h syscalls.h lib.h types.h \
+  filesysobjs.h keyboard_driver.h i8259.h paging_handler.h

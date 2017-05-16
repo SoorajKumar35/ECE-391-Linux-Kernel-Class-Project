@@ -1,0 +1,41 @@
+BUG_LOG
+==========================================
+
+-- 1 --
+BUG FOUND: 11_03_2017
+BUG DESCRIPTION: Compilor error. Message
+	displayed is "Error: no such 
+	instruction: void initialize_idt()"
+	Corresponds to line 12 of the file 
+	idt.h. 
+BUG RESOLVED:
+RESOLUTION:
+------------------------------------------
+
+-- 2 --
+BUG FOUND:
+BUG DESCRIPTION:
+BUG RESOLVED:
+RESOLUTION:
+------------------------------------------
+
+-- 3 --
+BUG FOUND:
+BUG DESCRIPTION:
+BUG RESOLVED:
+RESOLUTION:
+------------------------------------------
+
+-- 4 --
+BUG FOUND:
+BUG DESCRIPTION:
+BUG RESOLVED:
+RESOLUTION:
+------------------------------------------
+
+-- 5 --
+BUG FOUND:
+BUG DESCRIPTION:
+BUG RESOLVED:
+RESOLUTION:
+------------------------------------------

@@ -1,0 +1,185 @@
+BUG_LOG
+==========================================
+
+-- 1 --
+BUG FOUND: 11_03_2017
+BUG DESCRIPTION: Compilor error. Message
+	displayed is "Error: no such 
+	instruction: void initialize_idt()"
+	Corresponds to line 12 of the file 
+	idt.h. 
+BUG RESOLVED:
+RESOLUTION:
+------------------------------------------
+
+-- 2 --
+BUG FOUND: 14_03_2017
+BUG DESCRIPTION: at home not working
+BUG RESOLVED: 14_03_2017
+RESOLUTION: the shortcut was not updated in desktop
+------------------------------------------
+
+-- 3 --
+BUG FOUND: 16_03_2017
+BUG DESCRIPTION: boot.S can't find _gdt in x86_desc.S
+BUG RESOLVED: 16_03_2017
+RESOLUTION: add a global variable and use it in boot.S
+------------------------------------------
+
+-- 4 --
+BUG FOUND: 16_03_2017
+BUG DESCRIPTION: target not found in booting gdb
+BUG RESOLVED: 16_03_2017
+RESOLUTION:  was opening test_nodebug
+------------------------------------------
+
+-- 5 --
+BUG FOUND: 19_03_2017
+BUG DESCRIPTION: keyboard interupt only fire once
+BUG RESOLVED: 19_03_2017
+RESOLUTION: solution was not logged
+------------------------------------------
+BUG_LOG
+==========================================
+
+-- 6 --
+BUG FOUND: 19_03_2017
+BUG DESCRIPTION: rtc not responding
+BUG RESOLVED: 19_03_2017
+RESOLUTION: enable just IRQ8, just for this phase of mp
+------------------------------------------
+
+-- 7 --
+BUG FOUND: 30_03_2017
+BUG DESCRIPTION: execute failing
+BUG RESOLVED: long issue took learning cp3
+RESOLUTION: literally no tss or iret occuring
+------------------------------------------
+BUG_LOG
+==========================================
+
+-- 8 --
+BUG FOUND: 30_03_2017
+BUG DESCRIPTION: execute failing
+BUG RESOLVED: 30_03_2017
+RESOLUTION: the esp was not properly being restore after context switching
+------------------------------------------
+
+-- 9 --
+BUG FOUND: 8_04_2017
+BUG DESCRIPTION: cursor position incorrect
+BUG RESOLVED: 8_04_2017
+RESOLUTION: this occurs due the screen coordinates are left at the end of the reprinting the buffer, the position needs to be updated to prevent this issue
+------------------------------------------
+
+-- 10 --
+BUG FOUND: 10_04_2017
+BUG DESCRIPTION: file read system page faulting
+BUG RESOLVED: 10_04_2017
+RESOLUTION: the file system parsing had garbage in the buffer and was causing bad returns, error checking solved the problem
+------------------------------------------
+
+-- 11 --
+BUG FOUND: 12_04_2017
+BUG DESCRIPTION: keyboard print "\" when "0" key is pressed
+BUG RESOLVED: 17_04_2017
+RESOLUTION: bad mapping in keyboard driver
+------------------------------------------
+BUG_LOG
+==========================================
+
+-- 12 --
+BUG FOUND: 13_04_2017
+BUG DESCRIPTION: triple faulting
+BUG RESOLVED: 15_04_2017
+RESOLUTION: the file descriptor in this branch was not set up but code was referencing it as if it was, resolution merge code
+------------------------------------------
+
+-- 13 --
+BUG FOUND: 14_04_2017
+BUG DESCRIPTION: fails to compile
+BUG RESOLVED: 17_04_2017
+RESOLUTION: imporper inclusion of files, double definition occurring.
+------------------------------------------
+
+-- 14 --
+BUG FOUND: 15_04_2017
+BUG DESCRIPTION: attempt to write to file, getting nothing at all 
+BUG RESOLVED: 15_04_2017
+RESOLUTION: improper boot_block memory location
+------------------------------------------
+
+-- 15 --
+BUG FOUND: 16_04_2017
+BUG DESCRIPTION: faulting at fops calls
+BUG RESOLVED: 16_04_2017
+RESOLUTION: add error checking for fops tables
+------------------------------------------
+
+-- 16 --
+BUG FOUND: 17_04_2017
+BUG DESCRIPTION: if write is called, if the buffer does not contain a new line character, a newline will still be printed in the end
+BUG RESOLVED: 17_04_2017
+RESOLUTION: add error checking in write_terminal in terminal_driver.c.
+------------------------------------------
+BUG_LOG
+==========================================
+
+-- 17 --
+BUG FOUND: 20_04_2017
+BUG DESCRIPTION: file_read is failing
+BUG RESOLVED:20 _04_2017
+RESOLUTION: counter variable to track where in the file we are so that we may move on to the next part of the file and exit when ready
+------------------------------------------
+
+-- 18 --
+BUG FOUND: 21_04_2017
+BUG DESCRIPTION: ls is failing
+BUG RESOLVED: 21_04_2017
+RESOLUTION: directory_read was broken causing the reading of "." to fail
+------------------------------------------
+
+-- 19 --
+BUG FOUND: 
+BUG DESCRIPTION:
+BUG RESOLVED:
+RESOLUTION:
+------------------------------------------
+
+-- 20 --
+BUG FOUND: 25_04_2017
+BUG DESCRIPTION: grep is failing no matter what
+BUG RESOLVED: 25_04_2017
+RESOLUTION: when the buffer is created not all memory is allocated so grabage is being created at random points
+the solution is continiuously clear the buffer so no garbage remains
+------------------------------------------
+
+-- 21 --
+BUG FOUND: 27_04_2017
+BUG DESCRIPTION: PIT integration failing
+BUG RESOLVED: 27_04_2017
+RESOLUTION: forgot to set_idt_entry
+------------------------------------------
+BUG_LOG
+==========================================
+
+-- 22 --
+BUG FOUND: 28_04_2017
+BUG DESCRIPTION: multi terminals not taking input
+BUG RESOLVED: 28_04_2017
+RESOLUTION: terminal read not compensating for terminals 2&3
+------------------------------------------
+
+-- 23 --
+BUG FOUND: 28_04_2017
+BUG DESCRIPTION: PIT not working
+BUG RESOLVED: 28_04_2017
+RESOLUTION: PIT plugged into the wrong port
+------------------------------------------
+
+-- 24 --
+BUG FOUND: 30_04_2017
+BUG DESCRIPTION:The scheduler sometimes prints to the wrong screen
+BUG RESOLVED: No
+RESOLUTION:
+------------------------------------------
